@@ -1,7 +1,7 @@
 module Generator exposing
     ( Generator(..)
     , fromList, once, numFrom
-    , fromFn, toTuple, fromTuple, groupBy, split
+    , map, toTuple, fromTuple, groupBy, split
     , filter, filterMap
     , pipe, pipeTo
     , peek, step, collect
@@ -22,7 +22,7 @@ module Generator exposing
 
 # Transform Generators
 
-@docs fromFn, toTuple, fromTuple, groupBy, split
+@docs map, toTuple, fromTuple, groupBy, split
 
 
 ## Filter
@@ -118,9 +118,9 @@ once a =
 
 
 {-| -}
-fromFn : (a -> b) -> Generator a b
-fromFn fn =
-    Step (\a -> Yield (fn a) (\_ -> fromFn fn))
+map : (a -> b) -> Generator a b
+map fn =
+    Step (\a -> Yield (fn a) (\_ -> map fn))
 
 
 {-| -}
