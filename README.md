@@ -1,2 +1,2 @@
 
-- Read [docs](https://elm-doc-preview.netlify.app/?repo=albertdahlin%2Felm-generator&version=master)
+- Read [docs](https://elm-doc-preview.netlify.app/?repo=albertdahlin/elm-generator)
